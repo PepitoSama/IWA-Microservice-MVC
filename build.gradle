@@ -18,6 +18,11 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// https://mvnrepository.com/artifact/org.apache.kafka/kafka-clients
+	compile group: 'org.apache.kafka', name: 'kafka-clients', version: '2.6.0'
+	// https://mvnrepository.com/artifact/org.slf4j/slf4j-simple
+	testCompile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.30'
+
 }
 
 test {
