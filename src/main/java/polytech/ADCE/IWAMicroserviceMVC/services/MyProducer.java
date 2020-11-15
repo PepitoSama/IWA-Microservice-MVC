@@ -19,11 +19,18 @@ import java.util.Properties;
 @PropertySource("classpath:application.properties")
 public class MyProducer {
 
-    @Value("${bootstrap.server}")
     private String server;
+
+    private final Environment env;
 
     private Properties properties;
     org.apache.kafka.clients.producer.KafkaProducer<String,String> producer;
+
+    public MyProducer(Environment env) {
+        this.env = env;
+        this.setServer(env.getProperty("bootstrap.server"));
+        System.out.println(this.server);
+    }
 
     public KafkaProducer<String, String> getProducer() {
         return producer;
@@ -58,9 +65,6 @@ public class MyProducer {
         this.producer = producer;
     }
 
-    public MyProducer() {
-    }
-
     public String getBootstrapServer() {
         return server;
     }
@@ -71,5 +75,9 @@ public class MyProducer {
 
     public void setProperties(Properties properties) {
         this.properties = properties;
+    }
+
+    public void setServer(String server) {
+        this.server = server;
     }
 }

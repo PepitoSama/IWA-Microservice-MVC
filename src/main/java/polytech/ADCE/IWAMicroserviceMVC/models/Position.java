@@ -1,5 +1,8 @@
 package polytech.ADCE.IWAMicroserviceMVC.models;
 
+import com.fasterxml.jackson.databind.util.JSONPObject;
+import org.json.simple.JSONObject;
+
 import java.util.Date;
 
 public class Position {
@@ -49,6 +52,15 @@ public class Position {
     }
 
     public String toString() {
-        return this.getUserId() + " " + this.getLatitude() + " " + this.getLongitude()  + " " + this.getTimestamp();
+        return this.getUserId() + ":" + this.getLatitude() + ":" + this.getLongitude()  + ":" + this.getTimestamp();
+    }
+
+    public JSONObject toJSON() {
+        JSONObject json = new JSONObject();
+        json.put("userid", this.getUserId());
+        json.put("latitude", this.getLatitude());
+        json.put("longitude", this.getLongitude());
+        json.put("timestamp", this.getTimestamp());
+        return json;
     }
 }
