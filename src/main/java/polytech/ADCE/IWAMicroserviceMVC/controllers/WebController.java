@@ -30,7 +30,7 @@ public class WebController {
         this.setProducer(new MyProducer(env));
         this.getProducer().openConnection();
         Position position = new Position(
-                message.getUserId(),
+                message.getUsername(),
                 message.getLongitude(),
                 message.getLatitude(),
                 new Date()

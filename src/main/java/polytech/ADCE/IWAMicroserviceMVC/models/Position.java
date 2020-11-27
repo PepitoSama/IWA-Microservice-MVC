@@ -7,24 +7,24 @@ import java.util.Date;
 
 public class Position {
 
-    private int userId;
+    private String username;
     private double longitude;
     private double latitude;
     private Date timestamp;
 
-    public Position(int userId, double longitude, double latitude, Date timestamp) {
+    public Position(String username, double longitude, double latitude, Date timestamp) {
         this.setLatitude(latitude);
         this.setLongitude(longitude);
         this.setTimestamp(timestamp);
-        this.setUserId(userId);
+        this.setUsername(username);
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public double getLongitude() {
@@ -52,12 +52,12 @@ public class Position {
     }
 
     public String toString() {
-        return this.getUserId() + ":" + this.getLatitude() + ":" + this.getLongitude()  + ":" + this.getTimestamp();
+        return this.getUsername() + ":" + this.getLatitude() + ":" + this.getLongitude()  + ":" + this.getTimestamp();
     }
 
     public JSONObject toJSON() {
         JSONObject json = new JSONObject();
-        json.put("userid", this.getUserId());
+        json.put("username", this.getUsername());
         json.put("latitude", this.getLatitude());
         json.put("longitude", this.getLongitude());
         json.put("timestamp", this.getTimestamp());

@@ -51,7 +51,7 @@ public class MyProducer {
     }
 
     public void sendPosition(Position position) {
-        this.send("positions", position.toString());
+        this.send("positions", position.toJSON().toJSONString());
     }
 
     public void closeConnection() {

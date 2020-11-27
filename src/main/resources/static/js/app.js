@@ -40,7 +40,7 @@ function disconnect() {
 
 function sendPosition() {
     stompClient.send("/app/position", {}, JSON.stringify({
-        userId: 1,
+        username: "chostophe",
         longitude: this.longitude,
         latitude: this.latitude
     }))

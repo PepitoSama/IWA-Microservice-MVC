@@ -4,26 +4,26 @@ import java.util.Date;
 
 public class PositionMessage {
 
-    private int userId;
+    private String username;
     private double longitude;
     private double latitude;
     private Date timestamp;
 
     public PositionMessage() {}
 
-    public PositionMessage(int userId, double longitude, double latitude, Date timestamp) {
-        this.userId = userId;
+    public PositionMessage(String username, double longitude, double latitude, Date timestamp) {
+        this.username = username;
         this.longitude = longitude;
         this.latitude = latitude;
         this.timestamp = timestamp;
     }
 
-    public int getUserId() {
-        return userId;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public double getLongitude() {
