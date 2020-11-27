@@ -15,8 +15,6 @@ import polytech.ADCE.IWAMicroserviceMVC.models.Position;
 
 import java.util.Properties;
 
-@Component
-@PropertySource("classpath:application.properties")
 public class MyProducer {
 
     private String server;
